@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Adjust the number for the correct board size */
+    grid-gap: 2px;
+    margin: 0 auto;
+    width: 320px; /* Adjust the width according to the board size */
+}
+
+.cell {
+    background-color: #ccc;
+    border: 1px solid #fff;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.hidden {
+    background-color: #ddd;
+}
+
+.cell.safe {
+    background-color: #0f0; /* Safe cells could be shown as green */
+}
+
+.cell.bomb {
+    background-color: #f00; /* Bomb cells should be shown as red */
+    color: #fff; /* White text color for better visibility */
+}
+
+.cell.flagged {
+    background-color: #ffa500; /* Orange for flagged cells */
+}
+
+.cell:hover {
+    background-color: #bdbdbd; /* Light gray on hover */
+}
+
+.cell.unselected:hover {
+    background-color: #d1d1d1; /* Slightly darker gray for hover on unselected */
+}
+
+.cell.safe:hover {
+    background-color: #b2ebf2; /* Lighter blue for hover on safe cells */
+}
+
+.cell.bomb:hover {
+    background-color: #e57373; /* Lighter red for hover on bomb cells */
+}
